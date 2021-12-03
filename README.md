@@ -6,6 +6,6 @@ Contoh aplikasi android sederhana dengan 3 activity yang mendemonstrasikan:
 
 Merupakan kelanjutan dari contoh sebelumnya di [Kucing & Anjing Pedia](https://github.com/ewinsutriandi/kucing-anjing-pedia-intentextra)
 
-![Kucing & Anjing Pedia](catdogpedia.gif)
+![Kucing & Anjing Pedia](peliharaan-app.gif)
 
 
