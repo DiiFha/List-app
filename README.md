@@ -2,6 +2,7 @@
 
 by : M. Apriyandi Wiryatama
 
-![Kucing & Anjing Pedia](peliharaan-app.gif)
+![Kucing & Anjing Pedia](Indonesia-app.gif)
+![Kucing & Anjing Pedia](Inggris-app.gif)
 
 
