@@ -12,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
+import daftar.hewan.peliharaan.model.Anjing;
 import daftar.hewan.peliharaan.model.Hewan;
+import daftar.hewan.peliharaan.model.Ikan;
+import daftar.hewan.peliharaan.model.Kucing;
 
 public class DaftarHewanActivity extends AppCompatActivity {
     public final static String HEWAN_TERPILIH ="hewan_obj_key";
@@ -25,9 +28,18 @@ public class DaftarHewanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_daftar_hewan);
         Intent intent = getIntent();
         jenisHewan = intent.getStringExtra(MainActivity.JENIS_GALERI_KEY);
-        TextView txJudul = findViewById(R.id.text_title_daftar);
-        txJudul.setText("DAFTAR BERBAGAI RAS "+jenisHewan.toUpperCase());
         hewans = DataProvider.getHewansByTipe(this,jenisHewan);
+        // Judul
+        TextView txJudulList = findViewById(R.id.text_title_daftar);
+        String judul="";
+        if (hewans.get(0) instanceof Kucing) {
+            judul = getString(R.string.kucing_list_title);
+        } else if (hewans.get(0) instanceof Anjing) {
+            judul = getString(R.string.anjing_list_title);
+        } else if (hewans.get(0) instanceof Ikan) {
+            judul = getString(R.string.ikan_list_title);
+        }
+        txJudulList.setText(judul);
         setupListView();
     }
 

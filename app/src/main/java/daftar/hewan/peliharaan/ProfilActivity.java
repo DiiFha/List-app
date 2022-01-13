@@ -3,19 +3,24 @@ package daftar.hewan.peliharaan;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import daftar.hewan.peliharaan.model.Anjing;
 import daftar.hewan.peliharaan.model.Hewan;
+import daftar.hewan.peliharaan.model.Ikan;
+import daftar.hewan.peliharaan.model.Kucing;
 
 public class ProfilActivity extends AppCompatActivity {
 
     Hewan hewan;
     TextView txJudul,txJenis,txAsal,txDeskripsi;
     ImageView ivFotoHewan;
+    Button btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +37,22 @@ public class ProfilActivity extends AppCompatActivity {
         txAsal = findViewById(R.id.txAsal);
         txDeskripsi = findViewById(R.id.txDeskripsi);
         ivFotoHewan = findViewById(R.id.gambarHewan);
+        btnBack = findViewById(R.id.btn_back_to_list);
+        btnBack.setOnClickListener(view -> {
+            onBackPressed();
+        });
     }
 
 
     private void tampilkanProfil(Hewan hewan) {
         Log.d("Profil","Menampilkan "+hewan.getJenis());
-        txJudul.setText(hewan.getJenis());
+        if (hewan instanceof Kucing) {
+            txJudul.setText(getString(R.string.kucing));
+        } else if (hewan instanceof Anjing) {
+            txJudul.setText(getString(R.string.anjing));
+        } else if (hewan instanceof Ikan) {
+            txJudul.setText(getString(R.string.ikan));
+        }
         txJenis.setText(hewan.getRas());
         txAsal.setText(hewan.getAsal());
         txDeskripsi.setText(hewan.getDeskripsi());

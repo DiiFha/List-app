@@ -18,7 +18,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:text="Daftar Ras Hewan"/>
+        android:text="@string/daftar_ras_judul"/>
 
     <ListView
         android:id="@+id/listview_daftar_hewan"

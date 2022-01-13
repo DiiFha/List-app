@@ -63,7 +63,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(Tekan gambar untuk membuka galeri)"
+        android:text="@string/pilih_gambar"
         android:textStyle="italic"
         android:textSize="20dp"
         android:textColor="@color/white"

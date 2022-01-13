@@ -50,5 +50,12 @@
         android:gravity="center"
         android:text="Deskripsi hewan" />
 
+    <Button
+        android:id="@+id/btn_back_to_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/go_back"
+        />
 
 </LinearLayout>
